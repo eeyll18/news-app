@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import { fetchCategories } from "../store/slice";
 import Loading from "react-loading";
 import NewsCard from "../components/NewsCard";

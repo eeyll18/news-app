@@ -19,6 +19,7 @@ const Login = () => {
       setEmail("");
       setPassword("");
       console.log('login successfull')  // Giriş yaptıktan sonra haberler ekranına yönlendirme
+      console.log('auth',auth)
       navigate("/");  
     } catch (err) {
       setError(err.message);

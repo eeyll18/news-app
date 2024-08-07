@@ -7,11 +7,11 @@ import Navbar from "./components/Navbar";
 import Health from "./pages/Health";
 import Pagination from "./components/Pagination";
 import "./App.css";
-import { login, logout } from "./store/authSlice";
 import Favorites from "./pages/Favorites";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import NewsDetail from "./pages/NewsDetail";
+import Profile from "./pages/Profile";
 
 function App() {
   const dispatch = useDispatch();
@@ -65,6 +65,7 @@ function App() {
             <Route path="/favorites" element={<Favorites />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/profile" element={<Profile/>}/>
           </Routes>
         </div>
       </div>

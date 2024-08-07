@@ -1,9 +1,9 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDebounce } from "../hooks/useDebounce";
 import { useDispatch } from "react-redux";
 import { searchNews } from "../store/slice";
-import {  useAuth } from "../contexts/AuthContext";
+import { useAuth } from "../contexts/AuthContext";
 import Modal from "./Modal";
 
 const Navbar = () => {
@@ -11,8 +11,8 @@ const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dispatch = useDispatch();
   const { currentUser, logout } = useAuth();
-  const [isModalOpen,setIsModalOpen] = useState(false)
-  const navigate = useNavigate()
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
 
   const debouncedSearchTerm = useDebounce(searchTerm, 500);
 
@@ -20,23 +20,19 @@ const Navbar = () => {
     dispatch(searchNews(debouncedSearchTerm));
   }, [debouncedSearchTerm, dispatch]);
 
-
   const toggleDropdown = () => {
     setIsDropdownOpen((prev) => !prev);
   };
 
   const modalOpen = () => {
     setIsModalOpen(true);
-
-  }
+  };
 
   const logoutButton = () => {
     setIsModalOpen(false);
     logout();
     navigate("/");
-  }
-
-
+  };
 
   return (
     <nav className={`p-4 shadow-xl `}>
@@ -122,6 +118,12 @@ const Navbar = () => {
                 >
                   Favorites
                 </Link>
+                <Link
+                  to="/profile"
+                  className="text-lg font-medium hover:text-pink-500 mr-10"
+                >
+                  Profile
+                </Link>
                 <button
                   onClick={modalOpen}
                   className="text-lg font-medium hover:text-pink-500"
@@ -141,27 +143,25 @@ const Navbar = () => {
         </div>
       </div>
 
-
-    {/* favorite login modal */}
+      {/* favorite login modal */}
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <p className="mb-4 font-semibold text-center">
           Are you sure you want to log out?
         </p>
         <div className=" flex justify-center items-center">
-        <button
-          className="bg-pink-500 text-white py-2 px-2 m-3  rounded hover:bg-pink-600"
-          onClick={logoutButton}
-        >
-          Log Out
-        </button>
-        <button
-          className="bg-blue-500 text-white py-2 px-3 m-3 rounded hover:bg-blue-600"
-          onClick={()=>setIsModalOpen(false)}
-        >
-          Cancel
-        </button>
+          <button
+            className="bg-pink-500 text-white py-2 px-2 m-3  rounded hover:bg-pink-600"
+            onClick={logoutButton}
+          >
+            Log Out
+          </button>
+          <button
+            className="bg-blue-500 text-white py-2 px-3 m-3 rounded hover:bg-blue-600"
+            onClick={() => setIsModalOpen(false)}
+          >
+            Cancel
+          </button>
         </div>
-        
       </Modal>
     </nav>
   );
