@@ -1,16 +1,16 @@
 # NewsApp
 
-NewsApp, çeşitli kategorilerde haberleri görüntülemenizi sağlayan bir haber uygulamasıdır. Kullanıcılar, haberleri kategoriye göre arayabilir, detaylarına göz atabilir ve favori haberlerini kaydedebilirler. Uygulama, Firebase Authentication kullanarak kullanıcı girişi ve çıkışı yapmayı destekler.
+NewsApp is a news application that allows you to view news articles in various categories. Users can search for news by category, view details, and save their favorite news. The application supports user login and logout using Firebase Authentication.
 
-## Özellikler
+## Features
 
-- **Haber Listesi:** Kategorilere göre haberleri görüntüleyin.
-- **Arama Fonksiyonu:** Haber başlıklarında arama yaparak istediğiniz haberi bulun.
-- **Haber Detayları:** Her bir haberin detaylarına erişin.
-- **Kategoriler:** Sağladığınız kategorilere göre haberleri filtreleyin (ör. Sağlık, Teknoloji).
-- **Kullanıcı Yönetimi:** Firebase Authentication kullanarak kullanıcı girişi ve çıkışı yapın.
+- **News List:** View news articles by category.
+- **Search Function:** Search for news articles by title.
+- **News Details:** Access the details of each news article.
+- **Categories:** Filter news by provided categories (e.g., Health, Technology).
+- **User Management:** Login and logout using Firebase Authentication.
 
-## Teknolojiler
+## Technologies
 
 - **Frontend:**
   - React
@@ -24,13 +24,13 @@ NewsApp, çeşitli kategorilerde haberleri görüntülemenizi sağlayan bir habe
 - **State Management:**
   - Redux
 
-## Kurulum ve Çalıştırma
+## Setup and Running
 
-### Ön Koşullar
+### Prerequisites
 
-- [Node.js](https://nodejs.org) ve [npm](https://www.npmjs.com/) yüklü olmalıdır.
+- [Node.js](https://nodejs.org) and [npm](https://www.npmjs.com/) should be installed.
 
-### Projeyi Klonlama
+### Cloning the Project
 
 ```bash
 git clone https://github.com/eeyll18/news-app.git
